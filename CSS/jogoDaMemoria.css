@@ -1,0 +1,76 @@
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url(../Imagens/img_fundo.webp);
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(1, 1, 1, 0.3);
+    font-size: 1em;
+    width: 100%;
+    max-width: 1100px;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card{
+    aspect-ratio: 3/5;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover; 
+}
+
+.frente{
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.costas{
+    background-image: url('../Imagens/marvel.jpeg');
+    backface-visibility: hidden;
+}
+
+.revelaCarta{
+    transform: rotateY(180deg);
+}
+
+.cartasAcertadas{
+    filter: saturate(0);
+    opacity: 0.9;
+}
+@media (max-width: 480px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+}
